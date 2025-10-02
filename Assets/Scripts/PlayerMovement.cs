@@ -11,10 +11,6 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
 
-    private const float DOUBLE_TAP_TIME = .2f;
-    private float lastTapTime;
-    private KeyCode lastDirectionKey;
-
     private bool isRunning;
     private bool isFacingLeft = false;
 
@@ -42,31 +38,13 @@ public class PlayerMovement : MonoBehaviour {
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
+        // Checking for running (holding left shift + left/right arrow keys)
+        bool isShiftHeld = Input.GetKey(KeyCode.LeftShift);
+        bool isMovingHorizontally = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
+        isRunning = isShiftHeld && isMovingHorizontally;
+
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
         rigidBody.velocity = new Vector2(horizontalInput * currentSpeed, rigidBody.velocity.y);
-
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            KeyCode thisKey = Input.GetKeyDown(KeyCode.RightArrow) ? KeyCode.RightArrow : KeyCode.LeftArrow;
-            float timeSinceLastTap = Time.time - lastTapTime;
-
-            if (lastDirectionKey == thisKey && timeSinceLastTap <= DOUBLE_TAP_TIME)
-            {
-                isRunning = true;
-            }
-            else
-            {
-                isRunning = false;
-            }
-
-            lastTapTime = Time.time;
-            lastDirectionKey = thisKey;
-        }
-
-        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            isRunning = false;
-        }
     }
 
     // Function to flip the sprite when turning left or right
