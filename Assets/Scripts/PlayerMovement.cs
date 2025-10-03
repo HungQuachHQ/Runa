@@ -33,15 +33,6 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         animator.SetBool("isRunning", isRunning);
-
-        if (Input.GetKeyDown(KeyCode.Z)) {
-            animator.SetBool("isAttacking", true);
-        }
-    }
-
-    public void endAttack()
-    {
-        animator.SetBool("isAttacking", false);
     }
 
     private void HandleMovement()
