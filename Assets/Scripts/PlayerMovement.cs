@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -32,6 +33,15 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         animator.SetBool("isRunning", isRunning);
+
+        if (Input.GetKeyDown(KeyCode.Z)) {
+            animator.SetBool("isAttacking", true);
+        }
+    }
+
+    public void endAttack()
+    {
+        animator.SetBool("isAttacking", false);
     }
 
     private void HandleMovement()
