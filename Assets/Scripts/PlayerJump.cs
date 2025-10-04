@@ -18,19 +18,18 @@ public class PlayerJump : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded()) {
             Jump();
+            animator.SetBool("isJumping", true);
         }
-
-        animator.SetBool("isJumping", !isGrounded());
     }
 
     public bool isGrounded()
     {
-        if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer);
+    }
+
+    public void OnLanding ()
+    {
+        animator.SetBool("isJumping", false);
     }
 
     private void OnDrawGizmos()
@@ -42,24 +41,4 @@ public class PlayerJump : MonoBehaviour
     {
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        Vector3 normal = collision.GetContact(0).normal;
-    //        if (normal == Vector3.up)
-    //        {
-    //            grounded = true;
-    //        }
-    //    }
-    //}
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        grounded = false;
-    //    }
-    //}
 }

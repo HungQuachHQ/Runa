@@ -282,7 +282,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &706944493
@@ -359,7 +359,8 @@ GameObject:
   - component: {fileID: 736446347}
   - component: {fileID: 736446349}
   - component: {fileID: 736446350}
-  m_Layer: 7
+  - component: {fileID: 736446351}
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,8 +539,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6f931343b4e924b80e065366440a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   currentHealth: 0
+--- !u!114 &736446351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736446344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09681aa1265ec549bbdfe429ac71aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1544911799}
+  speed: 3
+  distanceBetween: 15
 --- !u!1 &1334509517
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1334509518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attack_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +603,7 @@ GameObject:
   - component: {fileID: 1544911806}
   - component: {fileID: 1544911808}
   - component: {fileID: 1544911805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1544911807}
   animator: {fileID: 1544911805}
-  walkSpeed: 4
+  walkSpeed: 3
   runSpeed: 10
 --- !u!95 &1544911805
 Animator:
@@ -809,8 +825,9 @@ MonoBehaviour:
   radius: 1.2
   enemies:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   damage: 20
+  delay: 2.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

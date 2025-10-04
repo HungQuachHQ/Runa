@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2b25b49c7d59022448c8e6730ba367aa
+guid: 9f32ab39cbbd62a4c855df94e5589c52
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,148 +110,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Light_ball_0
+      name: Enemy_Walk_0
       rect:
         serializedVersion: 2
         x: 50
         y: 0
-        width: 24
-        height: 63
+        width: 31
+        height: 66
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.4032258, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8291a481a6d7e4c41adaf96a50af5194
-      internalID: -1749260518
+      spriteID: e23efef252786234d9aef6e8bf7b9cef
+      internalID: -1869589063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_ball_1
+      name: Enemy_Walk_1
       rect:
         serializedVersion: 2
-        x: 178
+        x: 173
         y: 0
-        width: 23
-        height: 63
+        width: 45
+        height: 66
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.36666667, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c005552a32175d344a0248d9dab28955
-      internalID: 1262319238
+      spriteID: 4ff28d13d303a6443a0f01785012d4ba
+      internalID: -1945458325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_ball_2
+      name: Enemy_Walk_2
       rect:
         serializedVersion: 2
-        x: 304
+        x: 299
         y: 0
-        width: 36
-        height: 63
+        width: 43
+        height: 66
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.43023255, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06446416827b0b04a97152ee102d66c1
-      internalID: -2041665525
+      spriteID: 78484b81953f7fd4aaabe495cfe7fd6c
+      internalID: -2001899252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_ball_3
+      name: Enemy_Walk_3
       rect:
         serializedVersion: 2
-        x: 431
+        x: 422
         y: 0
-        width: 37
-        height: 63
+        width: 42
+        height: 66
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.5595238, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 188f13a202e49c742ac703bbc264d93b
-      internalID: 2059249347
+      spriteID: 265fcd2b474f682428387a70360daa14
+      internalID: -1823435193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_ball_4
+      name: Enemy_Walk_4
       rect:
         serializedVersion: 2
-        x: 558
+        x: 554
         y: 0
-        width: 38
-        height: 63
+        width: 35
+        height: 66
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.55714285, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9280cab84d335b48a8b825359c1f12e
-      internalID: 1707646803
+      spriteID: 8f7179b8c2d9c8146abd94e7ed1b0f37
+      internalID: 1432505924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_ball_5
+      name: Enemy_Walk_5
       rect:
         serializedVersion: 2
-        x: 687
+        x: 688
         y: 0
-        width: 37
-        height: 63
+        width: 26
+        height: 66
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.5192308, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5229db673345323438168b9e2f8de1f1
-      internalID: -663835161
+      spriteID: 689eb625293d22849b8f4af96cde0719
+      internalID: 1343774807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Light_ball_6
+      name: Enemy_Walk_6
       rect:
         serializedVersion: 2
         x: 817
         y: 0
-        width: 35
-        height: 63
+        width: 29
+        height: 66
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.43103448, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f6b4ddc395bc544b832b21d8d5e56fa
-      internalID: -330414165
+      spriteID: fb5d3c317b6231c4cab427dee26028e4
+      internalID: 35352342
       vertices: []
       indices: 
       edges: []
@@ -267,17 +267,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Light_ball_0: -1749260518
-      Light_ball_1: 1262319238
-      Light_ball_10: -1562689948
-      Light_ball_13: 1387029904
-      Light_ball_2: -2041665525
-      Light_ball_3: 2059249347
-      Light_ball_4: 1707646803
-      Light_ball_5: -663835161
-      Light_ball_6: -330414165
-      Light_ball_7: 919756346
-      Light_ball_9: -973274299
+      Enemy_Walk_0: -1869589063
+      Enemy_Walk_1: -1945458325
+      Enemy_Walk_2: -2001899252
+      Enemy_Walk_3: -1823435193
+      Enemy_Walk_4: 1432505924
+      Enemy_Walk_5: 1343774807
+      Enemy_Walk_6: 35352342
+      Walk_10: -1367395545
+      Walk_12: 590091126
+      Walk_14: -1746585721
+      Walk_16: -1829355530
+      Walk_18: 782535720
+      Walk_20: 1314953886
+      Walk_21: 1886022208
+      Walk_8: -1157367250
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
