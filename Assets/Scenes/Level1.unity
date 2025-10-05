@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &161129950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161129951}
+  m_Layer: 8
+  m_Name: Attack_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161129951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161129950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.86, y: 3.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 736446346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +391,7 @@ GameObject:
   - component: {fileID: 736446349}
   - component: {fileID: 736446350}
   - component: {fileID: 736446351}
+  - component: {fileID: 736446352}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -431,7 +463,8 @@ Transform:
   m_LocalPosition: {x: 10, y: -7, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 161129951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &736446347
@@ -541,6 +574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   currentHealth: 0
+  isHurt: 0
+  isDead: 0
+  movementDelay: 1
 --- !u!114 &736446351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +591,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1544911799}
   speed: 3
-  distanceBetween: 15
+  distanceBetween: 20
+  stopDistance: 3
+--- !u!114 &736446352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736446344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72443165a0a0d8048a408cc018a636cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 736446349}
+  player: {fileID: 1544911799}
+  attackPoint1: {fileID: 161129950}
+  radius: 2
+  players:
+    serializedVersion: 2
+    m_Bits: 128
+  damage: 20
+  attackRange: 3
+  attackDelay: 3
+  isAttacking: 0
 --- !u!1 &1334509517
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +662,7 @@ GameObject:
   - component: {fileID: 1544911804}
   - component: {fileID: 1544911806}
   - component: {fileID: 1544911808}
+  - component: {fileID: 1544911809}
   - component: {fileID: 1544911805}
   m_Layer: 7
   m_Name: Player
@@ -821,13 +882,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1544911805}
-  attackPoint: {fileID: 1334509517}
+  attackPoint1: {fileID: 1334509517}
   radius: 1.2
   enemies:
     serializedVersion: 2
     m_Bits: 256
-  damage: 20
-  delay: 2.5
+  damage: 50
+  attackDelay: 3
+  movementDelay: 1.2
+  attackedBlocked: 0
+  movementBlocked: 0
+--- !u!114 &1544911809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544911799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbd009ca3173a04b9d1d39a7f795ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  currentHealth: 0
+  isHurt: 0
+  isDead: 0
+  movementDelay: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

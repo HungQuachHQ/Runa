@@ -108,7 +108,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enemy_Attack_1_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 41
+        height: 64
+      alignment: 9
+      pivot: {x: 0.37804878, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc70172e3db69004797459d330f64c86
+      internalID: 1966017596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Attack_1_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 38
+        height: 63
+      alignment: 9
+      pivot: {x: 0.35526314, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d43be7468841e4d932e310163d2cb7
+      internalID: 645559689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Attack_1_2
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 0
+        width: 68
+        height: 66
+      alignment: 9
+      pivot: {x: 0.33088234, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6018b35b45a0e334bb20be844454fa1e
+      internalID: 1623605777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Attack_1_3
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 0
+        width: 84
+        height: 83
+      alignment: 9
+      pivot: {x: 0.3392857, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9252cf78bc80d6e4b9589335597df705
+      internalID: -1918260308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Attack_1_4
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 89
+        height: 87
+      alignment: 9
+      pivot: {x: 0.33146068, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9a38a38cdd07545acbf055e6dfb28a
+      internalID: 261550065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Attack_1_5
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 0
+        width: 98
+        height: 99
+      alignment: 9
+      pivot: {x: 0.29081634, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a98c1ff758306745964f6d1859b2001
+      internalID: 1371990363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Attack_1_6
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 0
+        width: 70
+        height: 66
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096d308b2876ecd449ed4a30a0c2c895
+      internalID: -168756948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +266,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Attack_1_11: -985656674
+      Attack_1_13: -288855264
+      Attack_1_15: 1765757007
+      Attack_1_17: -2136791918
+      Attack_1_19: 1782631949
+      Attack_1_21: -1355962594
+      Attack_1_7: 369922853
+      Attack_1_9: 655429505
+      Enemy_Attack_1_0: 1966017596
+      Enemy_Attack_1_1: 645559689
+      Enemy_Attack_1_2: 1623605777
+      Enemy_Attack_1_3: -1918260308
+      Enemy_Attack_1_4: 261550065
+      Enemy_Attack_1_5: 1371990363
+      Enemy_Attack_1_6: -168756948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
