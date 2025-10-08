@@ -18,6 +18,12 @@ public class EnemyAttack : MonoBehaviour {
     public bool isAttacking;
     private bool attackBlocked;
 
+    private EnemyHealth healthStatus;
+
+    private void Start() {
+        healthStatus = GetComponent<EnemyHealth>();
+    }
+
     void Update() {
         AttackRange();
     }
@@ -29,7 +35,7 @@ public class EnemyAttack : MonoBehaviour {
         float enemyDirection = Mathf.Sign(transform.localScale.x);
 
         if (distance <= attackRange) {
-            if (!isAttacking && playerDirection != enemyDirection) {
+            if (!isAttacking && !healthStatus.isDead && playerDirection != enemyDirection) {
                 transform.localScale = new Vector3(playerDirection, 1, 1);
             }
 
