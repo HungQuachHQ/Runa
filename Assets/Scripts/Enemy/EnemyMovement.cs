@@ -22,6 +22,8 @@ public class EnemyMovement : MonoBehaviour {
         animator = GetComponent<Animator>();
         healthStatus = GetComponent<EnemyHealth>();
         attackStatus = GetComponent<EnemyAttack>();
+
+        player = GameObject.Find("Player");
     }
 
     void Update() {

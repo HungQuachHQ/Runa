@@ -22,6 +22,7 @@ public class EnemyAttack : MonoBehaviour {
 
     private void Start() {
         healthStatus = GetComponent<EnemyHealth>();
+        player = GameObject.Find("Player");
     }
 
     void Update() {
