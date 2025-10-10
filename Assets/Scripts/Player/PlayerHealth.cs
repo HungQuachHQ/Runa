@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
     private Animator animator;
 
     public float health;
     public float currentHealth;
+    public Slider slider;
 
     public bool isHurt;
     public bool isDead;
@@ -17,6 +19,8 @@ public class PlayerHealth : MonoBehaviour {
     void Start() {
         animator = GetComponent<Animator>();
         currentHealth = health;
+        slider.maxValue = health;
+        slider.value = currentHealth;
     }
 
     void Update() {
@@ -26,6 +30,8 @@ public class PlayerHealth : MonoBehaviour {
     private void HandleHealth() {
         if (health < currentHealth && !isDead) {
             currentHealth = health;
+            slider.value = currentHealth;
+            
             animator.SetTrigger("Attacked");
             isHurt = true;
 
