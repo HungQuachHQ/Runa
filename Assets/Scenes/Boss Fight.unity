@@ -954,11 +954,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2362141885640002823, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1534293
+      value: 6.708967
       objectReference: {fileID: 0}
     - target: {fileID: 2362141885640002823, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.8710437
+      value: 6.865564
       objectReference: {fileID: 0}
     - target: {fileID: 2824244015151165719, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
       propertyPath: m_Follow
@@ -966,7 +966,11 @@ PrefabInstance:
       objectReference: {fileID: 814197269}
     - target: {fileID: 2824244015151165719, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 7
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900228941916829398, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.0602083
       objectReference: {fileID: 0}
     - target: {fileID: 2900228941916829398, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1021,12 +1025,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6207294435907849405, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
+      propertyPath: m_TrackedObjectOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207294435907849405, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
       propertyPath: m_TrackedObjectOffset.y
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8285439237036585616, guid: 0814f2a09ad94974c87ea6f421316bc7, type: 3}
       propertyPath: orthographic size
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3899,8 +3907,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -11.033773, y: 26.230854}
       - {x: -11.086867, y: -3.1097584}
-      - {x: 24.911537, y: -3.1746852}
-      - {x: 24.926449, y: 26.379333}
+      - {x: 24.515125, y: -3.1369321}
+      - {x: 24.492287, y: 26.417088}
   m_UseDelaunayMesh: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

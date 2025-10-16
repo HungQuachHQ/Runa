@@ -1,27 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class InstructionManager : MonoBehaviour
-{
-    public GameObject text;
+public class InstructionManager : MonoBehaviour {
+    public TextMeshProUGUI tutorialText;
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
-            text.SetActive(true);
+    private Dictionary<string, string> instructions = new Dictionary<string, string>()
+    {
+        { "MoveCollider", "Press the left/right arrow keys to move." },
+        { "JumpCollider", "Press the up arrow to jump." },
+        { "SprintCollider", "Hold left shift while moving to sprint." }
+    };
+
+    public void ShowInstruction(string colliderName) {
+        if (instructions.ContainsKey(colliderName)) {
+            tutorialText.text = instructions[colliderName];
+            tutorialText.gameObject.SetActive(true);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
-            StartCoroutine(DeactivateText());
-        }
-    }
-
-    private IEnumerator DeactivateText() {
-        yield return new WaitForSeconds(5);
-        text.SetActive(false);
-        Destroy(gameObject);
+    public void HideInstruction() {
+        tutorialText.gameObject.SetActive(false);
     }
 }
