@@ -19,7 +19,7 @@ public class InstructionTrigger : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             manager.HideInstruction();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

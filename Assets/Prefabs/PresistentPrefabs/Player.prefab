@@ -209,8 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 7174296696901579941}
   animator: {fileID: 8966232347565040119}
-  walkSpeed: 3
-  runSpeed: 10
+  walkSpeed: 3.5
+  runSpeed: 7
 --- !u!114 &8298257400888451455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   currentHealth: 0
+  slider: {fileID: 0}
   isHurt: 0
   isDead: 0
   movementDelay: 1
