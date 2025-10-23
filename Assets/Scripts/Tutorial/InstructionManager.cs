@@ -17,8 +17,11 @@ public class InstructionManager : MonoBehaviour {
         else if (colliderName == "SprintCollider") {
             tutorialText.text = "Hold left shift while moving to sprint.";
         }
-        
-        tutorialText.gameObject.SetActive(true);
+        else if (colliderName == "AttackCollider") {
+            tutorialText.text = "Press Z to attack.";
+        }
+
+            tutorialText.gameObject.SetActive(true);
     }
 
     public void HideInstruction() {
