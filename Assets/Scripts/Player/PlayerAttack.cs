@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
-    [SerializeField] Animator animator;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip lightClip;
 
     public GameObject attackPoint1;
     public float radius;
@@ -47,6 +48,10 @@ public class PlayerAttack : MonoBehaviour {
         
         StartCoroutine(DelayAttack());
         StartCoroutine(DelayMovement());
+    }
+
+    public void PlayLightSFX() {
+        SoundManager.instance.PlaySound(lightClip);
     }
 
     private IEnumerator DelayMovement() {

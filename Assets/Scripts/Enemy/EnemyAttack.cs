@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour {
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip attackClip;
     public GameObject player;
     
     public GameObject attackPoint1;
@@ -60,7 +61,7 @@ public class EnemyAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(attackPoint1.transform.position, radius, players);
 
         foreach (Collider2D playerGameObject in player) {
-            playerGameObject.GetComponent<PlayerHealth>().health -= damage;
+            playerGameObject.GetComponent<PlayerHealth>().currentHealth -= damage;
         }
     }
 
@@ -74,5 +75,9 @@ public class EnemyAttack : MonoBehaviour {
         yield return new WaitForSeconds(attackDelay);
         attackBlocked = false;
         isAttacking = false;
+    }
+
+    public void PlayAttackSFX() {
+        SoundManager.instance.PlaySound(attackClip);
     }
 }

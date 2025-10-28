@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour {
     private Animator animator;
 
-    public float health;
+    public float maxHealth;
+    public float playerHealth;
     public float currentHealth;
     public Slider slider;
 
@@ -18,8 +19,9 @@ public class PlayerHealth : MonoBehaviour {
     
     void Start() {
         animator = GetComponent<Animator>();
-        currentHealth = health;
-        slider.maxValue = health;
+        currentHealth = maxHealth;
+        playerHealth = maxHealth;
+        slider.maxValue = maxHealth;
         slider.value = currentHealth;
     }
 
@@ -28,8 +30,8 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     private void HandleHealth() {
-        if (health < currentHealth && !isDead) {
-            currentHealth = health;
+        if (currentHealth < playerHealth && !isDead) {
+            playerHealth = currentHealth;
             slider.value = currentHealth;
             
             animator.SetTrigger("Attacked");
@@ -38,13 +40,17 @@ public class PlayerHealth : MonoBehaviour {
             StartCoroutine(DelayMovement());
         }
 
-        if (health <= 0) {
+        if (currentHealth <= 0) {
             animator.SetTrigger("Dead");
             isDead = true;
         }
         else {
             isDead = false;
         }
+    }
+
+    public void Heal(int healthRestore) {
+
     }
 
     private IEnumerator DelayMovement() {

@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5554993058908555716}
+  attackClip: {fileID: 8300000, guid: 8705dc17891fbe34f90af824c7704f0c, type: 3}
   player: {fileID: 0}
   attackPoint1: {fileID: 8313959851223240410}
   radius: 1.3

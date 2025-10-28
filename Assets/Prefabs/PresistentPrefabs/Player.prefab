@@ -211,6 +211,8 @@ MonoBehaviour:
   animator: {fileID: 8966232347565040119}
   walkSpeed: 3.5
   runSpeed: 7
+  walkClip: {fileID: 8300000, guid: 94adc72d0d4cda245b0102cddc7aec7f, type: 3}
+  runClip: {fileID: 8300000, guid: b479565ff03010744baed264a790816a, type: 3}
 --- !u!114 &8298257400888451455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +228,8 @@ MonoBehaviour:
   rigidBody: {fileID: 7174296696901579941}
   animator: {fileID: 8966232347565040119}
   jumpForce: 8
+  jumpClip: {fileID: 8300000, guid: ce164ddd86efa1545b973113892576b9, type: 3}
+  landClip: {fileID: 8300000, guid: 57e43e09c3f18cf44b56e81d8d830182, type: 3}
   grounded: 0
   boxSize: {x: 1, y: 0.18}
   castDistance: 0
@@ -245,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8966232347565040119}
+  lightClip: {fileID: 8300000, guid: 5733d4c6762f5784387791f6e407f3b6, type: 3}
   attackPoint1: {fileID: 834720410362134587}
   radius: 1.2
   enemies:
@@ -267,7 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbd009ca3173a04b9d1d39a7f795ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 100
+  playerHealth: 0
   currentHealth: 0
   slider: {fileID: 0}
   isHurt: 0

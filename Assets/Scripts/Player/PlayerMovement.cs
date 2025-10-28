@@ -17,10 +17,15 @@ public class PlayerMovement : MonoBehaviour {
 
     private PlayerAttack moveStatus;
     private PlayerHealth healthStatus;
+    private PlayerJump groundStatus;
+
+    [SerializeField] private AudioClip walkClip;
+    [SerializeField] private AudioClip runClip;
 
     void Start() {
         moveStatus = GetComponent<PlayerAttack>();
         healthStatus = GetComponent<PlayerHealth>();
+        groundStatus = GetComponent<PlayerJump>();
     }
 
     void Update() {
@@ -42,8 +47,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     // Function to handle movement
-    private void HandleMovement()
-    {
+    private void HandleMovement() {
         if (canMove()) {
             horizontalInput = Input.GetAxisRaw("Horizontal");
 
@@ -55,8 +59,27 @@ public class PlayerMovement : MonoBehaviour {
             // Determining which speed to use when moving
             float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
-            rigidBody.velocity = new Vector2(horizontalInput * currentSpeed, rigidBody.velocity.y);
+            Vector2 groundNormal = groundStatus.GetGroundNormal();
+            float slopeAngle = Vector2.Angle(groundNormal, Vector2.up);
+
+            if (slopeAngle <= 45) {
+                Vector2 perp = Vector2.Perpendicular(groundNormal).normalized;
+                float directionSign = Mathf.Sign(Vector2.Dot(perp, Vector2.right));
+                Vector2 moveDirection = perp * directionSign * horizontalInput;
+                rigidBody.velocity = new Vector2(moveDirection.x * currentSpeed, rigidBody.velocity.y);
+            }
+            else {
+                rigidBody.velocity = new Vector2(horizontalInput * currentSpeed, rigidBody.velocity.y);
+            }
         }
+    }
+
+    public void PlayWalkSFX() {
+        SoundManager.instance.PlaySound(walkClip);
+    }
+
+    public void PlayRunSFX() {
+        SoundManager.instance.PlaySound(runClip);
     }
 
     // Function to flip the sprite when turning left or right
