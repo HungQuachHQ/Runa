@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour {
     [SerializeField] private AudioClip attackClip;
     public GameObject player;
     
+    // These variables the enemy's attack range.
     public GameObject attackPoint1;
     public float radius;
     public LayerMask players;
@@ -30,6 +31,7 @@ public class EnemyAttack : MonoBehaviour {
         AttackRange();
     }
 
+    // This function determines the enemy attack range. If the player is within the range, attack the player.
     private void AttackRange() {
         float distance = Vector2.Distance(transform.position, player.transform.position);
         float directionX = player.transform.position.x - transform.position.x;
@@ -45,6 +47,7 @@ public class EnemyAttack : MonoBehaviour {
         }
     }
 
+    // Function to handle enemy's attack.
     private void Attack() {
         if (attackBlocked) {
             return;
@@ -57,6 +60,7 @@ public class EnemyAttack : MonoBehaviour {
         StartCoroutine(DelayAttack());
     }
 
+    // Function to determine whether collision is made with the target. If so, deal damage to target.
     public void Attack_1() {
         Collider2D[] player = Physics2D.OverlapCircleAll(attackPoint1.transform.position, radius, players);
 
@@ -65,11 +69,13 @@ public class EnemyAttack : MonoBehaviour {
         }
     }
 
+    // Function to make attack range visible in the editor.
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(attackPoint1.transform.position, radius);
     }
 
+    // Function to handle attack delay.
     private IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(attackDelay);
@@ -77,6 +83,7 @@ public class EnemyAttack : MonoBehaviour {
         isAttacking = false;
     }
 
+    // Function to play attack sound effect.
     public void PlayAttackSFX() {
         SoundManager.instance.PlaySound(attackClip);
     }

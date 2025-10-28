@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChanger : MonoBehaviour
-{
+public class SceneChanger : MonoBehaviour {
+    // Below is code for changing scenes at the end of levels.
     public string sceneToLoad;
     public Animator animator;
     public float fadeTime = 0.5f;

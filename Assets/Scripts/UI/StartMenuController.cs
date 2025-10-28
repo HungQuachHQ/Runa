@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class StartMenuController : MonoBehaviour {
+    // The below code handles the button logic for the starting screen.
     private StartSceneChanger changer;
 
     private void Start() {

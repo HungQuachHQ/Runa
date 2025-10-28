@@ -9,12 +9,14 @@ public class PlayerMovement : MonoBehaviour {
 
     private float horizontalInput;
 
+    // Default player's walk and run speed.
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 10f;
 
     private bool isRunning;
     private bool isFacingLeft = false;
 
+    // These variables are for movement blocking purposes.
     private PlayerAttack moveStatus;
     private PlayerHealth healthStatus;
     private PlayerJump groundStatus;
@@ -59,13 +61,16 @@ public class PlayerMovement : MonoBehaviour {
             // Determining which speed to use when moving
             float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
+            // Determing whether the ground is flat or a slope
             Vector2 groundNormal = groundStatus.GetGroundNormal();
             float slopeAngle = Vector2.Angle(groundNormal, Vector2.up);
 
             if (slopeAngle <= 45) {
+                // Handling slopes logic
                 Vector2 perp = Vector2.Perpendicular(groundNormal).normalized;
                 float directionSign = Mathf.Sign(Vector2.Dot(perp, Vector2.right));
                 Vector2 moveDirection = perp * directionSign * horizontalInput;
+
                 rigidBody.velocity = new Vector2(moveDirection.x * currentSpeed, rigidBody.velocity.y);
             }
             else {
@@ -74,6 +79,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    // These two functions are used to play the walk and run sound effects.
     public void PlayWalkSFX() {
         SoundManager.instance.PlaySound(walkClip);
     }
@@ -92,6 +98,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    // This determines whether the player can move.
     private bool canMove() {
         if (moveStatus.movementBlocked || healthStatus.isHurt || healthStatus.isDead) {
             return false;

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ConfinerFinder : MonoBehaviour {
+    // This code is for bounding the camera inside the map.
     private void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

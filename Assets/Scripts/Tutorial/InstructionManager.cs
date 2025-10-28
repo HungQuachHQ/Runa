@@ -7,6 +7,7 @@ using UnityEngine;
 public class InstructionManager : MonoBehaviour {
     public TextMeshProUGUI tutorialText;
 
+    // The function handles which instruction text is shown depending on the collider's name.
     public void ShowInstruction(string colliderName) {
         if (colliderName == "MoveCollider") {
             tutorialText.text = "Press the left/right arrow keys to move.";
@@ -24,6 +25,7 @@ public class InstructionManager : MonoBehaviour {
             tutorialText.gameObject.SetActive(true);
     }
 
+    // Function to hide instruction text.
     public void HideInstruction() {
         tutorialText.gameObject.SetActive(false);
     }

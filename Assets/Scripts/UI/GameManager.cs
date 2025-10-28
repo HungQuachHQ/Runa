@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
+    // This manages the persistant objects. These objects are maintained throughout scenes.
     public static GameManager Instance;
 
     [Header("Persistent Objects")]

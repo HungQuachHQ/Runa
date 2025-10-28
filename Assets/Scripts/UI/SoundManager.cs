@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
+    // Below is simple code for handling the sound effects.
     public static SoundManager instance { get; private set; }
     private AudioSource source;
 

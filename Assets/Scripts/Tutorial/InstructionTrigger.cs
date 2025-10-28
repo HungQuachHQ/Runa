@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InstructionTrigger : MonoBehaviour {
+    // Handles collider logic for the tutorial.
     private InstructionManager manager;
 
     void Start() { 

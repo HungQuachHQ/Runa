@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour {
     private Animator animator;
 
+    // These variables are used to track the player's health.
     public float maxHealth;
     public float playerHealth;
     public float currentHealth;
     public Slider slider;
 
+    // Movement delay purposes.
     public bool isHurt;
     public bool isDead;
 
@@ -29,6 +31,7 @@ public class PlayerHealth : MonoBehaviour {
         HandleHealth();
     }
 
+    // Function to handle the player's health.
     private void HandleHealth() {
         if (currentHealth < playerHealth && !isDead) {
             playerHealth = currentHealth;
@@ -49,10 +52,12 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
 
-    public void Heal(int healthRestore) {
+    // Unable to implement due to time.
+    //public void Heal(int healthRestore) {
 
-    }
+    //}
 
+    // This function is used to delay the player's movement when they get hurt.
     private IEnumerator DelayMovement() {
         yield return new WaitForSeconds(movementDelay);
         isHurt = false;
