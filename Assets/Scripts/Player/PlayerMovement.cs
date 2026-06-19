@@ -71,10 +71,10 @@ public class PlayerMovement : MonoBehaviour {
                 float directionSign = Mathf.Sign(Vector2.Dot(perp, Vector2.right));
                 Vector2 moveDirection = perp * directionSign * horizontalInput;
 
-                rigidBody.velocity = new Vector2(moveDirection.x * currentSpeed, rigidBody.velocity.y);
+                rigidBody.linearVelocity = new Vector2(moveDirection.x * currentSpeed, rigidBody.linearVelocity.y);
             }
             else {
-                rigidBody.velocity = new Vector2(horizontalInput * currentSpeed, rigidBody.velocity.y);
+                rigidBody.linearVelocity = new Vector2(horizontalInput * currentSpeed, rigidBody.linearVelocity.y);
             }
         }
     }

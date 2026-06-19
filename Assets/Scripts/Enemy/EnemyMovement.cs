@@ -37,7 +37,7 @@ public class EnemyMovement : MonoBehaviour {
         if ((distance < distanceBetween) && canMove()) {
             if (Mathf.Abs(directionX) > stopDistance) {
                 float moveDirection = Mathf.Sign(directionX);
-                rigidBody.velocity = new Vector2(moveDirection * speed, rigidBody.velocity.y);
+                rigidBody.linearVelocity = new Vector2(moveDirection * speed, rigidBody.linearVelocity.y);
 
                 animator.SetBool("isWalking", true);
 
@@ -46,13 +46,13 @@ public class EnemyMovement : MonoBehaviour {
             }
             else {
                 // If Player is within stop distance, stop horizontal movement while keeping direction
-                rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
+                rigidBody.linearVelocity = new Vector2(0, rigidBody.linearVelocity.y);
                 animator.SetBool("isWalking", false);
             }
         }
         else {
             // Stop moving if player is out of range
-            rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
+            rigidBody.linearVelocity = new Vector2(0, rigidBody.linearVelocity.y);
             animator.SetBool("isWalking", false);
         }
     }
